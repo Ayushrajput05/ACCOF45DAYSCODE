@@ -1,0 +1,75 @@
+#include<stdio.h>
+void printArray(int [], int, int);
+int main()
+{
+    int arr[MAX_SIZE];
+    int n, i;
+    printf("Enter size of the array : ");
+    scanf("%d", &n);
+    printf("Enter elements in the array : ");
+    for(i=0; i<n; i++) 
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("Elements in the array: ");
+    printArray(arr, 0, n);
+    return 0;
+}
+void printArray(int arr[], int start, int len)
+{
+    if(start >= len)
+        return 0;
+    printf("%d ", arr[start+len-1]);
+    printArray(arr, start, len-1); 
+}
+
+
+#include<stdio.h>
+int revers(int,int);
+int sizeofno(int);
+int powr(int,int);
+void main()
+{
+int n,p;
+printf("\n Enter a Number : ");
+scanf("%d",&n);
+p=sizeofno(n);
+printf("\n The number is %d",n);
+n=revers(n,p);
+printf("\n The number in reverse is %d",n);
+}
+int revers(int x,int pr)
+{
+if(x<10)
+return x;
+else
+return ((x%10)*powr(10,pr-1)+revers(x/10,pr-1));
+}
+int powr(int a, int b)
+{
+if(b==0)
+return 1;
+else
+return (a*powr(a,b-1));
+}
+int sizeofno(int s)
+{
+if(s<10)
+return 1;
+else
+return (1+sizeofno(s/10));
+}
+
+
+#include <stdio.h>
+void quicksort (int [], int, int);
+int main()
+{
+    int list[100];
+    int value, i;
+    printf("Enter The Number of Elements To Sort: ");
+    scanf("%d", &value);
+    printf("\n\nEnter The Elements To Sort: \n");
+    for (i = 0; i < value; i++)
+    {
+         printf("\nEnter The [ %d ] Element: ",i+1);
