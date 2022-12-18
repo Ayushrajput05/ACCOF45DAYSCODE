@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+int i,n,*e;
+printf("\n Find the largest element using Dynamic Memory Allocation :\n"); 
+printf("\n Input total number of elements to be entered : ");
+scanf("%d",&n);
+//e=(int*)malloc(n*sizeof(int));
+e=(int*)calloc(n,sizeof(int));
+printf("\n Input %d elements : ",n);
+for(i=0;i<n;++i)  
+    {
+       printf(" Number %d: ",i+1);
+       scanf("%d",e+i);
+    }
+    for(i=1;i<n;++i)  
+    {
+       if(*e<*(e+i)) 
+           *e=*(e+i);
+    }
+    printf("\n The Largest element is :  %d ",*e);
+    return 0;
+}
