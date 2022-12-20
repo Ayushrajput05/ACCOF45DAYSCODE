@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+   int num;
+   FILE *fptr;
+   fptr = fopen("program.txt","w");
+  if(fptr == NULL)
+   {
+      printf("Error!");   
+      exit(1);             
+   }
+   printf("Enter num: ");
+   scanf("%d",&num);
+   fprintf(fptr,"%d",num);
+   fclose(fptr);
+   return 0;
+}
+
+#include <stdio.h>
+void main()
+{
+   FILE *fp;
+   fp = fopen("C:\\DOC\\test.txt", "w");
+   fprintf(fp, "This program is for testing \n");
+   fclose(fp);
+}
+
+#include <stdio.h>
+void main()
+{
+   FILE *fp;
+   char buffer[20];
+   fp = fopen("test.txt", "w");
+   fscanf(fp, "%s", buffer);
+   printf("Read Buffer: %s\n",buffer);
+   fclose(fp);
+}
