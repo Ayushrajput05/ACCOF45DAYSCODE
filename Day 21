@@ -1,0 +1,16 @@
+#include <stdio.h>
+int x=5;
+void externStorageClass();
+int main() {
+externStorageClass();
+printf("Value of x=%d",x);
+    return 0;
+}
+void externStorageClass()
+{
+    printf("\nDemonstrating extern class\n\n");
+    extern int x;
+    printf("Value of the variable 'x'declared as extern: %d\n",x);
+    x = 2;
+    printf("Modified value of the variable 'x' declared as extern: %d\n",x);
+}
