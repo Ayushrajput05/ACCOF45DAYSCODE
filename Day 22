@@ -1,0 +1,14 @@
+#include <stdio.h>
+int a = 2;
+int x = 32;
+int b = 8;
+int main() {
+   auto int a = 28;
+   extern int b,x;
+printf("\nThe value of auto variable : %d", a);
+printf("\nThe value of extern variables x and b : %d,%d",x,b);
+   x = 15;
+   b = 22;
+printf("\nThe value of modified extern variable x and b : %d,%d",x,b);
+   return 0;
+}
